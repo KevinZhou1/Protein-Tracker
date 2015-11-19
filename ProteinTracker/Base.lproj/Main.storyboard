@@ -92,7 +92,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jq-yO-rgr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jq-yO-rgr">
                                 <rect key="frame" x="298" y="503" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -150,6 +150,7 @@
                             <constraint firstItem="RTz-0a-UiQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="01C-uL-tK8"/>
                             <constraint firstItem="vcr-xX-azZ" firstAttribute="top" secondItem="RQa-o4-JlB" secondAttribute="bottom" constant="53" id="2hQ-UI-YwQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RQa-o4-JlB" secondAttribute="trailing" constant="231" id="8Nw-DL-YAe"/>
+                            <constraint firstItem="1Jq-yO-rgr" firstAttribute="bottom" secondItem="E5J-vM-87d" secondAttribute="bottom" id="DB1-4h-rhi"/>
                             <constraint firstItem="RTz-0a-UiQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="58" id="JsP-ul-p7e"/>
                             <constraint firstItem="vcr-xX-azZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="On8-Ga-NSd"/>
                             <constraint firstItem="E5J-vM-87d" firstAttribute="leading" secondItem="qbF-Gv-jvh" secondAttribute="trailing" constant="27" id="PgG-Ql-jFz"/>
@@ -175,6 +176,7 @@
                         <outlet property="dailyProtein" destination="RQa-o4-JlB" id="75I-Yi-Bib"/>
                         <outlet property="proteinAmount" destination="E5J-vM-87d" id="r2Y-N2-inT"/>
                         <outlet property="proteinDescription" destination="qbF-Gv-jvh" id="86B-57-Azh"/>
+                        <outlet property="tableView" destination="vcr-xX-azZ" id="Ful-wP-njN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

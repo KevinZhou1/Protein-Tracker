@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource {
+    
+    //ToDo items list
+    
+    var list = [ProteinItem]();
+    
     
     //MARK: Outlets
     
@@ -16,10 +21,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var proteinDescription: UITextField!
     @IBOutlet weak var proteinAmount: UITextField!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     
     //MARK: ACTIONS
     
     @IBAction func enterButtonPressed(sender: AnyObject) {
+        
+        list.append(ProteinItem(text: proteinDescription.text!, proteinAmount: Double( proteinAmount.text!)!))
         
         
     }
@@ -30,9 +39,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         proteinDescription.text = ""
         proteinAmount.text = ""
         
-        //TODO: reset the contents in the table
+        //reset the contents in the table
+        list.removeAll()
         
     }
+    
+    //datasource methods
+    // MARK: - Table view data source
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("cell",
+                forIndexPath: indexPath) as! UITableViewCell
+            let item = list[indexPath.row]
+            cell.textLabel?.text = item.text
+            return cell
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
