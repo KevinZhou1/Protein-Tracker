@@ -31,7 +31,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         list.append(ProteinItem(text: proteinDescription.text!, proteinAmount: Double( proteinAmount.text!)!))
         tableView.reloadData()
         
-        dailyProtein.text =  String(Double( dailyProtein.text!)! -  Double(proteinAmount.text!)!)
+        
+        if (!dailyProtein.text!.isEmpty) {
+            
+            dailyProtein.text =  String(Double( dailyProtein.text!)! -  Double(proteinAmount.text!)!)
+        }
+        
     }
     
  
