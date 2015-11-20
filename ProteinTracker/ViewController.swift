@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
     //ToDo items list
     
@@ -29,10 +29,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
     @IBAction func enterButtonPressed(sender: AnyObject) {
         
         list.append(ProteinItem(text: proteinDescription.text!, proteinAmount: Double( proteinAmount.text!)!))
+        tableView.reloadData()
         
-        
+        dailyProtein.text =  String(Double( dailyProtein.text!)! -  Double(proteinAmount.text!)!)
     }
     
+ 
 
     @IBAction func resetButtonPressed(sender: AnyObject) {
         dailyProtein.text = ""
@@ -41,6 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         
         //reset the contents in the table
         list.removeAll()
+        tableView.reloadData()
         
     }
     
@@ -60,7 +63,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
             let cell = tableView.dequeueReusableCellWithIdentifier("cell",
                 forIndexPath: indexPath) as! UITableViewCell
             let item = list[indexPath.row]
-            cell.textLabel?.text = item.text
+            cell.textLabel?.text = item.text + " Protein: " +  String(item.proteinAmount)
             return cell
     }
     
@@ -72,6 +75,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         self.dailyProtein.delegate = self
         self.proteinDescription.delegate = self
         self.proteinAmount.delegate = self
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
