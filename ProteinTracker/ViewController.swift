@@ -96,6 +96,36 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
 
+    //Methods adjust the keyboard setting
+    func textFieldDidBeginEditing(textField: UITextField) { // became first responder
+        
+        //move textfields up
+        let myScreenRect: CGRect = UIScreen.mainScreen().bounds
+        let keyboardHeight : CGFloat = 216
+        
+        UIView.beginAnimations( "animateView", context: nil)
+        var movementDuration:NSTimeInterval = 0.35
+        var needToMove: CGFloat = 0
+        
+        var frame : CGRect = self.view.frame
+        if (textField.frame.origin.y + textField.frame.size.height + /*self.navigationController.navigationBar.frame.size.height + */UIApplication.sharedApplication().statusBarFrame.size.height > (myScreenRect.size.height - keyboardHeight)) {
+            needToMove = (textField.frame.origin.y + textField.frame.size.height + /*self.navigationController.navigationBar.frame.size.height +*/ UIApplication.sharedApplication().statusBarFrame.size.height) - (myScreenRect.size.height - keyboardHeight);
+        }
+        
+        frame.origin.y = -needToMove
+        self.view.frame = frame
+        UIView.commitAnimations()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        //move textfields back down
+        UIView.beginAnimations( "animateView", context: nil)
+        var movementDuration:NSTimeInterval = 0.35
+        var frame : CGRect = self.view.frame
+        frame.origin.y = 0
+        self.view.frame = frame
+        UIView.commitAnimations()
+    }
 
 }
 
