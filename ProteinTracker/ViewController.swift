@@ -52,6 +52,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         
     }
     
+    
+    @IBAction func userTapped(sender: AnyObject) {
+        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+    }
+    
     //datasource methods
     // MARK: - Table view data source
     
