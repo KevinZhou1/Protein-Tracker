@@ -38,7 +38,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Protein (g)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5J-vM-87d">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Protein (g)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5J-vM-87d">
                                 <rect key="frame" x="223" y="123" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -109,7 +109,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQa-o4-JlB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Goal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQa-o4-JlB">
                                 <rect key="frame" x="223" y="78" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="qWF-Ov-VJu"/>
@@ -118,14 +118,14 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.83974179530385773" blue="0.64422127349457736" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="RTz-0a-UiQ" firstAttribute="centerX" secondItem="hhl-8n-Aoi" secondAttribute="centerX" id="5MP-hl-Mkt"/>
                             <constraint firstItem="E1o-1w-FRQ" firstAttribute="leading" secondItem="hhl-8n-Aoi" secondAttribute="trailing" constant="21" id="9QO-dq-58e"/>
                             <constraint firstAttribute="bottomMargin" secondItem="1Jq-yO-rgr" secondAttribute="bottom" constant="97" id="CEw-qG-5um"/>
                             <constraint firstItem="E5J-vM-87d" firstAttribute="trailing" secondItem="RQa-o4-JlB" secondAttribute="trailing" id="HLj-on-S7N"/>
-                            <constraint firstItem="E5J-vM-87d" firstAttribute="leading" secondItem="qbF-Gv-jvh" secondAttribute="trailing" constant="47" id="Mqh-zv-fjf"/>
+                            <constraint firstItem="E5J-vM-87d" firstAttribute="leading" secondItem="qbF-Gv-jvh" secondAttribute="trailing" constant="31" id="Mqh-zv-fjf"/>
                             <constraint firstItem="hhl-8n-Aoi" firstAttribute="top" secondItem="qbF-Gv-jvh" secondAttribute="bottom" constant="18" id="Pn1-wf-LwG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hhl-8n-Aoi" secondAttribute="bottom" constant="37" id="SBz-Mh-dZs"/>
                             <constraint firstItem="vcr-xX-azZ" firstAttribute="top" secondItem="E1o-1w-FRQ" secondAttribute="bottom" constant="38" id="d8z-Ob-lfZ"/>

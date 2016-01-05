@@ -28,15 +28,55 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
     
     @IBAction func enterButtonPressed(sender: AnyObject) {
         
-        list.append(ProteinItem(text: proteinDescription.text!, proteinAmount: Double( proteinAmount.text!)!))
-        tableView.reloadData()
-        
-        
-        if (!dailyProtein.text!.isEmpty) {
+        if proteinDescription.text != "" {
             
-            dailyProtein.text =  String(Double( dailyProtein.text!)! -  Double(proteinAmount.text!)!)
+            let description = proteinDescription.text
+            //testing
+            print("description \(description)")
+            
+            if let proteinNum  = Double(proteinAmount.text!) {
+                
+            list.append(ProteinItem(text: description!, proteinAmount: Double(proteinAmount.text!)!))
+            tableView.reloadData()
+            
+            
+            if (!dailyProtein.text!.isEmpty) {
+                
+                dailyProtein.text =  String(Double( dailyProtein.text!)! -  Double(proteinAmount.text!)!)
+            }
         }
+         
+                
         
+            else {
+                //present the alert view controller
+                let alertController = UIAlertController(title: "Error", message: "Enter valid protein amount", preferredStyle: .Alert)
+                //We add buttons to the alert controller by creating UIAlertActions:
+                let actionOk = UIAlertAction(title: "OK",
+                    style: .Default,
+                    handler: nil) //You can use a block here to handle a press on this button
+                
+                alertController.addAction(actionOk)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                print("Enter valid protein amount")
+            }
+        
+    }
+        
+        else {
+            //present the alert view controller
+            let alertController = UIAlertController(title: "Error", message: "Enter valid description", preferredStyle: .Alert)
+            //We add buttons to the alert controller by creating UIAlertActions:
+            let actionOk = UIAlertAction(title: "OK",
+                style: .Default,
+                handler: nil) //You can use a block here to handle a press on this button
+            
+            alertController.addAction(actionOk)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            print ("Enter valid description")
+        }
     }
     
  
